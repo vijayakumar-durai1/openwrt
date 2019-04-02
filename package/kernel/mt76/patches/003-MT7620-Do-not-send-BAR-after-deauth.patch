@@ -1,0 +1,12 @@
+diff --git a/mt76x02_util.c b/mt76x02_util.c
+index ed4a4b3..926a3b5 100644
+--- a/mt76x02_util.c
++++ b/mt76x02_util.c
+@@ -375,7 +375,6 @@ int mt76x02_ampdu_action(struct ieee80211_hw *hw, struct ieee80211_vif *vif,
+ 	case IEEE80211_AMPDU_TX_STOP_FLUSH:
+ 	case IEEE80211_AMPDU_TX_STOP_FLUSH_CONT:
+ 		mtxq->aggr = false;
+-		ieee80211_send_bar(vif, sta->addr, tid, mtxq->agg_ssn);
+ 		break;
+ 	case IEEE80211_AMPDU_TX_START:
+ 		mtxq->agg_ssn = *ssn << 4;
